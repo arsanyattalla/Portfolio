@@ -22,10 +22,17 @@ import { useTheme } from "@/components/theme-provider";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectsSection from "../components/ProjectsSection";
-
+import Skills from "../components/skills"
+import Education from "../components/education"
 export default function Portfolio() {
-  const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
+const [activeResumeTab, setActiveResumeTab] = useState<
+  "skills" | "experience" | "education"
+>("education");
+
+  
+  
+
 
   // Change active section based on scroll position
   useEffect(() => {
@@ -49,13 +56,12 @@ export default function Portfolio() {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  const scrollToSection = (Id: string) => {
+    const element = document.getElementById(Id);
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 80,
@@ -68,15 +74,17 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/90 backdrop-blur-md z-50 border-b border-primary/20">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-3 grid grid-cols-3 items-center">
+          {/* Left (empty or logo later) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold"
-          ></motion.div>
+          />
 
-          <div className="hidden md:flex space-x-6">
+          {/* Center nav */}
+          <div className="hidden md:flex justify-center space-x-6">
             {["home", "about", "projects", "resume", "contact"].map((item) => (
               <button
                 key={item}
@@ -92,19 +100,15 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label="Toggle theme"
-            className="text-primary hover:text-primary/80"
-          >
-            {theme === "dark" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
-          </Button>
+          {/* Right button */}
+          <div className="flex justify-end">
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("home")}
+            >
+              Arsany Attalla
+            </Button>
+          </div>
         </div>
       </nav>
       {/* Hero Section */}
@@ -258,85 +262,53 @@ export default function Portfolio() {
         <ProjectsSection />
       </>
       {/* Skills Section */}
-      <section id="skills" className="py-16 bg-secondary/30 relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-2 text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold gradient-text">My Skills</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              I've worked with a variety of technologies and tools in the web
-              development ecosystem.
-            </p>
-          </motion.div>
+      <section id="resume" className="py-16 bg-secondary/30 relative">
+  <div className="container mx-auto px-4 relative z-10">
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { name: "HTML & CSS", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "JavaScript", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "TypeScript", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "React", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "Next.js", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "Tailwind CSS", icon: <Code className="h-6 w-6 mb-2" /> },
-              { name: "Node.js", icon: <Cpu className="h-6 w-6 mb-2" /> },
-              { name: "Git", icon: <Code className="h-6 w-6 mb-2" /> },
-              {
-                name: "Responsive Design",
-                icon: <Layers className="h-6 w-6 mb-2" />,
-              },
-              { name: "RESTful APIs", icon: <Cpu className="h-6 w-6 mb-2" /> },
-              {
-                name: "Manual Testing",
-                icon: <Code className="h-6 w-6 mb-2" />,
-              },
-              {
-                name: "Automated Testing",
-                icon: <Cpu className="h-6 w-6 mb-2" />,
-              },
-              {
-                name: "Test Case Design",
-                icon: <Code className="h-6 w-6 mb-2" />,
-              },
-              {
-                name: "Bug Tracking (Jira)",
-                icon: <Code className="h-6 w-6 mb-2" />,
-              },
-              {
-                name: "System Troubleshooting",
-                icon: <Cpu className="h-6 w-6 mb-2" />,
-              },
-              { name: "Linux", icon: <Cpu className="h-6 w-6 mb-2" /> },
-              {
-                name: "Technical Support",
-                icon: <Layers className="h-6 w-6 mb-2" />,
-              },
-              { name: "Networking", icon: <Layers className="h-6 w-6 mb-2" /> },
-            ].map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full custom-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
-                  <CardContent className="flex flex-col items-center justify-center h-full p-6">
-                    <span className="text-primary">{skill.icon}</span>
-                    <span className="text-center font-medium">
-                      {skill.name}
-                    </span>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="space-y-4 text-center mb-12"
+    >
+      <h2 className="text-3xl font-bold gradient-text">Resume</h2>
+      <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto" />
+
+      {/* Tabs */}
+      <div className="flex justify-center space-x-6">
+        {["education","experience","skills"].map((tab) => (
+          <button
+            key={tab}
+            type="button"
+            onClick={() => setActiveResumeTab(tab as any)}
+            className={`capitalize text-sm font-medium transition-colors ${
+              activeResumeTab === tab
+                ? "text-primary"
+                : "text-muted-foreground hover:text-primary"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+    </motion.div>
+
+    {/* Content */}
+    <motion.div
+      key={activeResumeTab}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      {activeResumeTab === "skills" && <Skills/> }
+      {activeResumeTab === "experience"  }
+      {activeResumeTab === "education" && <Education/> }
+    </motion.div>
+  </div>
+</section>
+
       {/* Contact Section */}
       <section id="contact" className="py-16 relative">
         <div className="container mx-auto px-4 relative z-10">
@@ -355,11 +327,6 @@ export default function Portfolio() {
             </p>
           </motion.div>
 
-          {
-            //<div className="max-w-2xl mx-auto">
-            //<ContactForm />
-            //</div>
-          }
           <div className="flex flex-wrap justify-center gap-4 mt-12">
             <motion.div
               whileHover={{ y: -5 }}
@@ -435,77 +402,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function ProjectCard({
-  title,
-  description,
-  image,
-  tags,
-  demoLink,
-  codeLink,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  demoLink: string;
-  codeLink: string;
-}) {
-  return (
-    <Card className="overflow-hidden h-full flex flex-col hover:shadow-md transition-all duration-300 custom-border bg-card/80 backdrop-blur-sm hover:border-primary/50">
-      <div className="relative h-48 w-full">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-contain p-6"
-        />
-      </div>
-
-      <CardContent className="flex-1 flex flex-col p-6">
-        <h3 className="text-xl font-bold mb-2 text-primary">{title}</h3>
-        <p className="text-muted-foreground text-sm flex-1 mb-4">
-          {description}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="flex space-x-3 mt-auto">
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 border-primary/50 text-primary hover:bg-primary/10"
-            asChild
-          >
-            <Link href={demoLink} target="_blank">
-              <ExternalLink className="h-4 w-4 mr-1" />
-              Demo
-            </Link>
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 border-accent/50 text-accent hover:bg-accent/10"
-            asChild
-          >
-            <Link href={codeLink} target="_blank">
-              <Github className="h-4 w-4 mr-1" />
-              Code
-            </Link>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
   );
 }
