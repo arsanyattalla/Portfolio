@@ -57,7 +57,7 @@ export default function ProjectsSection() {
               image="/placeholder.svg?height=300&width=500"
               tags={["React", "Tailwind", "TypeScript"]}
               demoLink="https://example.com"
-              codeLink="https://github.com/arsanyattalla/DrillShare-webapp"
+              codeLink="https://github.com/arsanyattalla/"
             />
           </motion.div>
         </div>
