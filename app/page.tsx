@@ -22,18 +22,16 @@ import { useTheme } from "@/components/theme-provider";
 import Link from "next/link";
 import Image from "next/image";
 import ProjectsSection from "../components/ProjectsSection";
-import Skills from "../components/skills"
-import Education from "../components/education"
+import Skills from "../components/skills";
+import Education from "../components/education";
 import Experience from "@/components/experience";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
-const [activeResumeTab, setActiveResumeTab] = useState<
-  "skills" | "experience" | "education"
->("education");
+  const [activeResumeTab, setActiveResumeTab] = useState<
+    "skills" | "experience" | "education"
+  >("education");
 
-  
-  
-
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // Change active section based on scroll position
   useEffect(() => {
@@ -85,12 +83,12 @@ const [activeResumeTab, setActiveResumeTab] = useState<
           />
 
           {/* Center nav */}
-          <div className="hidden md:flex justify-center space-x-6">
+          <div className="hidden md:flex justify-center space-x-10">
             {["home", "about", "projects", "resume", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`capitalize text-sm font-medium hover:text-primary transition-colors ${
+                className={`capitalize text-large font-large-italic hover:text-primary transition-colors ${
                   activeSection === item
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -101,15 +99,54 @@ const [activeResumeTab, setActiveResumeTab] = useState<
             ))}
           </div>
 
-          {/* Right button */}
-          <div className="flex justify-end">
-            <Button
-              variant="outline"
-              onClick={() => scrollToSection("home")}
+          {/* Mobile nav */}
+          <div className="md:hidden flex justify-center">
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="text-primary p-2"
             >
-              Arsany Attalla
-            </Button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {showMobileMenu && (
+            <div className="absolute top-16 left-0 w-full bg-background/95 backdrop-blur-md flex flex-col items-center py-4 space-y-4 md:hidden z-50">
+              {["home", "about", "projects", "resume", "contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => {
+                      scrollToSection(item);
+                      setShowMobileMenu(false);
+                    }}
+                    className={`capitalize text-lg font-medium hover:text-primary transition-colors ${
+                      activeSection === item
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item}
+                  </button>
+                )
+              )}
+            </div>
+          )}
+
+          
         </div>
       </nav>
       {/* Hero Section */}
@@ -264,51 +301,50 @@ const [activeResumeTab, setActiveResumeTab] = useState<
       </>
       {/* Skills Section */}
       <section id="resume" className="py-16 bg-secondary/30 relative">
-  <div className="container mx-auto px-4 relative z-10">
-
-    {/* Header */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="space-y-4 text-center mb-12"
-    >
-      <h2 className="text-3xl font-bold gradient-text">Resume</h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto" />
-
-      {/* Tabs */}
-      <div className="flex justify-center space-x-6">
-        {["education","experience","skills"].map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            onClick={() => setActiveResumeTab(tab as any)}
-            className={`capitalize text-sm font-medium transition-colors ${
-              activeResumeTab === tab
-                ? "text-primary"
-                : "text-muted-foreground hover:text-primary"
-            }`}
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-4 text-center mb-12"
           >
-            {tab}
-          </button>
-        ))}
-      </div>
-    </motion.div>
+            <h2 className="text-3xl font-bold gradient-text">Resume</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto" />
 
-    {/* Content */}
-    <motion.div
-      key={activeResumeTab}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      {activeResumeTab === "skills" && <Skills/> }
-      {activeResumeTab === "experience" && <Experience/>  }
-      {activeResumeTab === "education" && <Education/> }
-    </motion.div>
-  </div>
-</section>
+            {/* Tabs */}
+            <div className="flex justify-center space-x-6">
+              {["education", "experience", "skills"].map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setActiveResumeTab(tab as any)}
+                  className={`capitalize text-sm font-medium transition-colors ${
+                    activeResumeTab === tab
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            key={activeResumeTab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {activeResumeTab === "skills" && <Skills />}
+            {activeResumeTab === "experience" && <Experience />}
+            {activeResumeTab === "education" && <Education />}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-16 relative">

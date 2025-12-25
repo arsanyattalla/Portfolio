@@ -3,7 +3,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
-  title: "Portfolio | Arsany Attalla",
+  title: "Arsany Attalla",
   description: "Personal portfolio website showcasing my projects and skills",
   icons: {
     icon: "/Screenshot 2025-12-24 172452.png",
