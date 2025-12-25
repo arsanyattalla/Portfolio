@@ -11,7 +11,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useTheme } from "@/components/theme-provider";
 import Image from "next/image";
 
 export default function ProjectsSection() {
@@ -41,7 +40,7 @@ export default function ProjectsSection() {
               description="Tool Rental App which allows users to rent an item or list an item for others to rent and both parties can save/earn money"
               image="/logo512.png"
               tags={["React", "Node.JS", "Express"]}
-              demoLink="https://example.com"
+              demoLink=""
               codeLink="https://github.com/arsanyattalla/DrillShare-webapp"
             />
           </motion.div>
@@ -121,6 +120,7 @@ function ProjectCard({
         </div>
 
         <div className="flex space-x-3 mt-auto">
+          {demoLink && (
           <Button
             variant="outline"
             size="sm"
@@ -132,6 +132,7 @@ function ProjectCard({
               Demo
             </Link>
           </Button>
+          )}
           <Button
             variant="outline"
             size="sm"

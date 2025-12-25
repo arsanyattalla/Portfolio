@@ -5,8 +5,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 export const metadata = {
   title: "Portfolio | Arsany Attalla",
   description: "Personal portfolio website showcasing my projects and skills",
-    generator: 'v0.dev'
-}
+  icons: {
+    icon: "/Screenshot 2025-12-24 172452.png",
+  },
+};
 
 export default function RootLayout({
   children,

@@ -24,6 +24,7 @@ import Image from "next/image";
 import ProjectsSection from "../components/ProjectsSection";
 import Skills from "../components/skills"
 import Education from "../components/education"
+import Experience from "@/components/experience";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
 const [activeResumeTab, setActiveResumeTab] = useState<
@@ -303,7 +304,7 @@ const [activeResumeTab, setActiveResumeTab] = useState<
       transition={{ duration: 0.3 }}
     >
       {activeResumeTab === "skills" && <Skills/> }
-      {activeResumeTab === "experience"  }
+      {activeResumeTab === "experience" && <Experience/>  }
       {activeResumeTab === "education" && <Education/> }
     </motion.div>
   </div>
@@ -396,7 +397,7 @@ const [activeResumeTab, setActiveResumeTab] = useState<
       <footer className="py-6 border-t border-primary/20">
         <div className="container mx-auto px-4 relative z-10 items-center">
           <div className="flex flex-col md:flex-row justify-between items-center"></div>
-          <p className="text-muted-foreground text-sm items-center">
+          <p className="text-muted-foreground text-sm items-center flex justify-center">
             © {new Date().getFullYear()} Arsany Attalla. All rights reserved.
           </p>
         </div>
