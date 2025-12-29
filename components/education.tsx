@@ -22,7 +22,7 @@ export default function Education() {
       id="education"
       
     >
-<div className="flex items-center gap-1">
+<div className="flex items-center gap-0">
   <Image
     src="/SFSU-San-Francisco-State-University-Symbol.png"
     alt="San Francisco State University"

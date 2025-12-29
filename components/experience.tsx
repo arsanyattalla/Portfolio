@@ -76,8 +76,7 @@ const experienceData = [
 export default function Experience() {
   return (
     <section id="experience" className="py-1">
-      <h2 className="text-3xl font-bold/italic gradient-text ">Experience</h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mt-2 justify-center" />
+   
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

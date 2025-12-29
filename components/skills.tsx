@@ -17,14 +17,17 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Skills() {
   return (
+    <section>
+      
     <div
       id="skills"
       className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
     >
+      
       {" "}
       {[
-                { name: "Powershell", icon: <Cpu className="h-6 w-6 mb-2" /> },
-{
+        { name: "Powershell", icon: <Cpu className="h-6 w-6 mb-2" /> },
+        {
           name: "System Troubleshooting",
           icon: <Cpu className="h-6 w-6 mb-2" />,
         },
@@ -52,9 +55,9 @@ export default function Skills() {
         {
           name: "Bug Tracking (Jira)",
           icon: <Code className="h-6 w-6 mb-2" />,
-        }
-        
+        },
       ].map((skill, index) => (
+        
         <motion.div
           key={skill.name}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -63,6 +66,7 @@ export default function Skills() {
           viewport={{ once: true }}
         >
           {" "}
+          
           <Card className="h-full custom-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
             {" "}
             <CardContent className="flex flex-col items-center justify-center h-full p-6">
@@ -74,5 +78,6 @@ export default function Skills() {
         </motion.div>
       ))}{" "}
     </div>
+    </section>
   );
 }
