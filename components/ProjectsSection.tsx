@@ -52,12 +52,12 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
           >
             <ProjectCard
-              title="E-commerce Platform"
-              description="A brief description of this project. What it does, technologies used, and challenges overcome."
-              image="/placeholder.svg?height=300&width=500"
-              tags={["React", "Tailwind", "TypeScript"]}
-              demoLink="https://example.com"
-              codeLink="https://github.com/arsanyattalla/"
+              title="Portfolio Website"
+              description="My personal portfolio website showcasing my projects, skills, and experience as a software developer."
+              image="/Screenshot 2025-12-29 144319.png"
+              tags={["Next.js", "React", "TypeScript"]}
+              demoLink="https://arsanyattalla.com"
+              codeLink="https://github.com/arsanyattalla/Portfolio"
             />
           </motion.div>
         </div>
