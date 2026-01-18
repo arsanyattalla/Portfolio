@@ -54,7 +54,7 @@ export default function ProjectsSection() {
             <ProjectCard
               title="Portfolio Website"
               description="My personal portfolio website showcasing my projects, skills, and experience as a software developer."
-              image="/Screenshot 2025-12-29 144319.png"
+              image="/Elegant serif letter _A_ design.png"
               tags={["Next.js", "React", "TypeScript"]}
               demoLink="https://arsanyattalla.com"
               codeLink="https://github.com/arsanyattalla/Portfolio"
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/80"
           >
-            <Link href="https://github.com" target="_blank">
+            <Link href="https://github.com/arsanyattalla" target="_blank">
               View More on GitHub
             </Link>
           </Button>

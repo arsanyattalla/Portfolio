@@ -109,7 +109,7 @@ export default function Portfolio() {
                       >
                         {item}
                       </button>
-                    )
+                    ),
                   )}
                 </div>
 
@@ -155,7 +155,7 @@ export default function Portfolio() {
                         >
                           {item}
                         </button>
-                      )
+                      ),
                     )}
                   </div>
                 )}
@@ -275,36 +275,31 @@ export default function Portfolio() {
                 <div className="flex flex-col md:flex-row gap-10 items-center">
                   <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                     <li>
-                      Strong background in IT systems and software engineering,
-                      with hands-on experience supporting, testing, and
-                      maintaining reliable application and system environments.
+                      Strong IT systems administration experience supporting
+                      Windows and Linux environments across on-prem and Azure
+                      infrastructure.
                     </li>
                     <li>
-                      4+ years of experience working with web-based systems,
-                      including deploying, monitoring, and troubleshooting
-                      applications across development and production
-                      environments.
+                      Proficient in PowerShell scripting for automation, system
+                      management, reporting, and troubleshooting.
                     </li>
                     <li>
-                      Experience writing and executing test cases, performing
-                      manual and automated testing, and collaborating with
-                      developers to identify, reproduce, and resolve system and
-                      software issues.
+                      Hands-on experience with Windows Server, Active Directory,
+                      Group Policy, Azure AD, Intune, and endpoint management.
                     </li>
                     <li>
-                      Solid understanding of system workflows, APIs, and
-                      integrations, with experience debugging issues across
-                      frontend, backend, and infrastructure layers.
+                      Solid networking knowledge including TCP/IP, DNS, DHCP,
+                      VPNs, firewalls, and network troubleshooting.
                     </li>
                     <li>
-                      Proficient in modern software development practices,
-                      including building and maintaining web applications using
-                      JavaScript, React, and backend services.
+                      Experience supporting cloud and hybrid environments in
+                      Azure, including identity, device management, and security
+                      controls.
                     </li>
                     <li>
-                      Continuously improving skills in system reliability,
-                      automation, and quality assurance by learning new tools,
-                      technologies, and best practices.
+                      Working programming knowledge (PowerShell, Python, Bash)
+                      to support automation, integrations, and system
+                      reliability.
                     </li>
                   </ul>
                 </div>
