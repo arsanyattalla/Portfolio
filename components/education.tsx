@@ -35,7 +35,7 @@ export default function Education() {
       San Francisco State University
     </p>
      <p className="text-lg md:text-xl text-muted-foreground italic">
-      B.S Computer Science 2022
+      B.S Computer Science
     </p>
   </div>
 </div>

@@ -187,12 +187,12 @@ export default function Portfolio() {
                         Arsany Attalla
                       </h1>
                       <h3 className="text-2xl md:text-3xl text-muted-foreground">
-                        Systems Engineer | Software Developer
+                        Network Engineer | Software Developer
                       </h3>
                     </div>
 
                     <p className="text-muted-foreground max-w-lg">
-                      Systems Engineer @ Draeger's Supermarkets
+                      Network Administrator @ 1st United Credit Union
                     </p>
 
                     <div className="flexitems-center">
@@ -368,10 +368,7 @@ export default function Portfolio() {
                     Get In Touch
                   </h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Feel free to reach out if you're looking for an engineer,
-                    have a question, or just want to connect.
-                  </p>
+                
                 </motion.div>
 
                 <div className="flex flex-wrap justify-center gap-4 mt-12">

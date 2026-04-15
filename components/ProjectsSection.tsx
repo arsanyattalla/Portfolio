@@ -52,6 +52,21 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
           >
             <ProjectCard
+              title="IT Management System"
+              description="An application built using Next.js and TypeScript for managing IT assets, tracking inventory, and generating reports for a small business."
+              image="/mgmt.png"
+              tags={["Next.js", "React", "TypeScript"]}
+              demoLink=""
+              codeLink="https://github.com/arsanyattalla/it-management-system"
+            />
+          </motion.div>
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <ProjectCard
               title="Portfolio Website"
               description="My personal portfolio website showcasing my projects, skills, and experience as a software developer."
               image="/Elegant serif letter _A_ design.png"
