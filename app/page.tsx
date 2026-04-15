@@ -275,26 +275,31 @@ export default function Portfolio() {
                 <div className="flex flex-col md:flex-row gap-10 items-center">
                   <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                     <li>
-                      Strong IT systems administration experience supporting
-                      Windows and Linux environments across on-prem and Azure
-                      infrastructure.
+                      Hands-on experience with network infrastructure including
+                      switches, routers, and firewalls, supporting
+                      configuration, monitoring, and troubleshooting in
+                      enterprise environments.
                     </li>
                     <li>
-                      Proficient in PowerShell scripting for automation, system
-                      management, reporting, and troubleshooting.
+                      Strong understanding of switching and routing concepts
+                      such as VLANs, subnetting, NAT, and inter-VLAN routing,
+                      ensuring efficient and secure network segmentation.
                     </li>
                     <li>
-                      Hands-on experience with Windows Server, Active Directory,
-                      Group Policy, Azure AD, Intune, and endpoint management.
+                      Experience configuring and troubleshooting firewall rules,
+                      VPN connectivity, and access control policies to maintain
+                      secure communication across internal and external
+                      networks.
                     </li>
                     <li>
-                      Solid networking knowledge including TCP/IP, DNS, DHCP,
-                      VPNs, firewalls, and network troubleshooting.
+                      Proficient in diagnosing network issues using tools like
+                      ping, traceroute, nslookup, and netstat, resolving
+                      connectivity, latency, and DNS-related problems.
                     </li>
                     <li>
-                      Experience supporting cloud and hybrid environments in
-                      Azure, including identity, device management, and security
-                      controls.
+                      Familiar with network security best practices including
+                      firewall hardening, port management, and monitoring
+                      traffic to prevent unauthorized access.
                     </li>
                     <li>
                       Working programming knowledge (PowerShell, Python, Bash)
@@ -368,7 +373,6 @@ export default function Portfolio() {
                     Get In Touch
                   </h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
-                
                 </motion.div>
 
                 <div className="flex flex-wrap justify-center gap-4 mt-12">
