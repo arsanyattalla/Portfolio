@@ -27,11 +27,12 @@ import Skills from "../components/skills";
 import Education from "../components/education";
 import Experience from "@/components/experience";
 import { AnimatePresence } from "framer-motion";
+import Certificates from "@/components/certificates";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
   const [activeResumeTab, setActiveResumeTab] = useState<
-    "skills" | "experience" | "education"
+    "skills" | "experience" | "education" | "certificates"
   >("education");
   const [showIntro, setShowIntro] = useState(true);
 
@@ -329,7 +330,7 @@ export default function Portfolio() {
 
                   {/* Tabs */}
                   <div className="flex justify-center space-x-6">
-                    {["education", "experience", "skills"].map((tab) => (
+                    {["education", "certificates", "experience", "skills"].map((tab) => (
                       <button
                         key={tab}
                         type="button"
@@ -355,6 +356,7 @@ export default function Portfolio() {
                   {activeResumeTab === "skills" && <Skills />}
                   {activeResumeTab === "experience" && <Experience />}
                   {activeResumeTab === "education" && <Education />}
+                  {activeResumeTab === "certificates" && <Certificates />}
                 </motion.div>
               </div>
             </section>
