@@ -41,7 +41,7 @@ export default function Portfolio() {
   // Change active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "projects", "resume", "contact"];
+      const sections = ["home", "about", "projects", "resume"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -97,7 +97,7 @@ export default function Portfolio() {
 
                 {/* Center nav */}
                 <div className="hidden md:flex justify-center space-x-10">
-                  {["home", "about", "projects", "resume", "contact"].map(
+                  {["home", "about", "projects", "resume"].map(
                     (item) => (
                       <button
                         key={item}
@@ -140,7 +140,7 @@ export default function Portfolio() {
                 {/* Mobile Menu Dropdown */}
                 {showMobileMenu && (
                   <div className="absolute top-16 left-0 w-full bg-background/95 backdrop-blur-md flex flex-col items-center py-4 space-y-4 md:hidden z-50">
-                    {["home", "about", "projects", "resume", "contact"].map(
+                    {["home", "about", "projects", "resume"].map(
                       (item) => (
                         <button
                           key={item}
@@ -188,7 +188,7 @@ export default function Portfolio() {
                         Arsany Attalla
                       </h1>
                       <h3 className="text-2xl md:text-3xl text-muted-foreground">
-                        Network Engineer | Software Developer
+                        Network Engineer
                       </h3>
                     </div>
 
@@ -362,86 +362,7 @@ export default function Portfolio() {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-16 relative">
-              <div className="container mx-auto px-4 relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="space-y-2 text-center mb-12"
-                >
-                  <h2 className="text-3xl font-bold gradient-text">
-                    Get In Touch
-                  </h2>
-                  <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
-                </motion.div>
-
-                <div className="flex flex-wrap justify-center gap-4 mt-12">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full border-primary/50 text-primary hover:bg-primary/10"
-                      asChild
-                    >
-                      <Link
-                        href="https://github.com/arsanyattalla"
-                        target="_blank"
-                        aria-label="GitHub"
-                      >
-                        <Github className="h-5 w-5 mr-2" />
-                        GitHub
-                      </Link>
-                    </Button>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full border-primary/50 text-primary hover:bg-primary/10"
-                      asChild
-                    >
-                      <Link
-                        href="https://www.linkedin.com/in/arsany-attalla-1330531b1/"
-                        target="_blank"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin className="h-5 w-5 mr-2" />
-                        LinkedIn
-                      </Link>
-                    </Button>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full border-primary/50 text-primary hover:bg-primary/10"
-                      asChild
-                    >
-                      <Link
-                        href="mailto:arsanyattalla10@gmail.com"
-                        aria-label="Email"
-                      >
-                        <Mail className="h-5 w-5 mr-2" />
-                        Email
-                      </Link>
-                    </Button>
-                  </motion.div>
-                </div>
-              </div>
-            </section>
+           
 
             {/* Footer */}
             <footer className="py-6 border-t border-primary/20">
