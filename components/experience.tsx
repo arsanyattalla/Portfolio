@@ -6,11 +6,8 @@ const experienceData = [
     company: "Draeger's Supermarkets",
     role: "Systems Engineer",
     period: "Oct 2025 – Present",
-    lWidth: 100,
-    lHeight: 48,
-    logoScale: 1,
-
     logo: "/DraegersCircleDLogoWhite.png",
+    logoScale: 1,
     points: [
       "Designed and maintained IT systems and internal tools",
       "Deliver multi-site technical support and root-cause troubleshooting across servers, networks, and endpoints.",
@@ -22,13 +19,10 @@ const experienceData = [
   },
   {
     company: "Fidelity Investments",
-    role: "Support Analsyst",
+    role: "Support Analyst",
     period: "May 2025 – Oct 2025",
-    lWidth: 100,
-    lHeight: 48,
     logo: "/Fidelity-Investments-Logo-Vector-01-scaled-Picsart-BackgroundRemover.jpg",
-    logoScale: 1.25,
-
+    logoScale: 1.2,
     points: [
       "Delivered technical support for hardware, software, and network issues, ensuring minimal downtime.",
       "Built, imaged, and configured laptops using Windows Autopilot for new hires and refresh cycles",
@@ -43,10 +37,7 @@ const experienceData = [
     role: "Applications Engineer",
     period: "Jan 2023 – May 2024",
     logo: "Screenshot 2025-12-24 152854-Picsart-BackgroundRemover.png",
-    lWidth: 100,
-    lHeight: 60,
     logoScale: 0.75,
-
     points: [
       "Debugged application issues using logs, API traces, and system metrics to identify root causes and implement fixes.",
       "Developed and maintained scripts (Python/JavaScript) to automate diagnostics, data validation, and routine support tasks.",
@@ -57,13 +48,10 @@ const experienceData = [
   },
   {
     company: "Qureez Inc.",
-    role: "Support Specialist/Engineer",
-    period: "Oct. 2021 – Jan 2023",
+    role: "Support Specialist / Engineer",
+    period: "Oct 2021 – Jan 2023",
     logo: "Screenshot 2025-12-24 152854-Picsart-BackgroundRemover.png",
-    lWidth: 100,
-    lHeight: 60,
     logoScale: 0.75,
-
     points: [
       "Managed Azure AD accounts, group policies, and RBAC, improving access control.",
       "Optimized IT budgets by selecting cost-effective hardware, software, and cloud solutions.",
@@ -75,60 +63,64 @@ const experienceData = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-1">
-   
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        ></motion.div>
+    <section id="experience" className="py-20 w-full">
+      <div className="mx-auto max-w-5xl px-4 text-left">
 
-        {/* Timeline */}
-        <div className="relative border-l border-muted pl-6 space-y-10">
+  
+
+        <div className="relative border-l border-primary/20 ">
+
           {experienceData.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative w-full"
             >
-              {/* Content */}
-              <div className="flex items-start gap-4">
-                <div className="relative w-16 h-16 shrink-0 flex items-center justify-center">
+
+              <div className="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+
+              <div className="flex gap-5 items-start w-full rounded-xl p-5 bg-secondary/20 hover:bg-secondary/30 transition-all">
+
+                <div className="w-14 h-14 flex-shrink-0 flex items-start justify-center mt-1">
                   <Image
                     src={item.logo}
                     alt={item.company}
-                    fill
+                    width={56}
+                    height={56}
                     className="object-contain"
-                    style={{
-                      transform: `scale(${item.logoScale ?? 1})`,
-                    }}
+                    style={{ transform: `scale(${item.logoScale})` }}
                   />
                 </div>
 
-                <div>
-                  <h3 className="text-lg font-semibold/italic">
-                    {item.company}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {item.role} • {item.period}
-                  </p>
+                <div className="flex-1 text-left min-w-0">
 
-                  <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                    {item.points.map((point, i) => (
-                      <li key={i}>{point}</li>
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-semibold leading-tight text-left">
+                      {item.company}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground leading-tight text-left">
+                      {item.role} • {item.period}
+                    </p>
+                  </div>
+
+                  <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc list-outside ml-5 text-left">
+                    {item.points.map((p, i) => (
+                      <li key={i} className="leading-relaxed">
+                        {p}
+                      </li>
                     ))}
                   </ul>
+
                 </div>
+
               </div>
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>

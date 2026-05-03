@@ -16,17 +16,23 @@ import Image from "next/image";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 relative">
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
+      <div className="container mx-auto px-1 relative z-10">
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-2 text-center mb-12"
+          className="text-4xl md:text-3xl font-bold text-center tracking-tight relative"
         >
-          <h2 className="text-3xl font-bold gradient-text">Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto" />
-        </motion.div>
+          <span className="gradient-text">Projects</span>
+
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "70px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="h-[3px] bg-primary mx-auto mt-4 rounded-full mb-6"
+          />
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <motion.div
@@ -60,7 +66,7 @@ export default function ProjectsSection() {
               codeLink="https://github.com/arsanyattalla/it-management-system"
             />
           </motion.div>
-           <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -136,17 +142,17 @@ function ProjectCard({
 
         <div className="flex space-x-3 mt-auto">
           {demoLink && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 border-primary/50 text-primary hover:bg-primary/10"
-            asChild
-          >
-            <Link href={demoLink} target="_blank">
-              <ExternalLink className="h-4 w-4 mr-1" />
-              Demo
-            </Link>
-          </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1 border-primary/50 text-primary hover:bg-primary/10"
+              asChild
+            >
+              <Link href={demoLink} target="_blank">
+                <ExternalLink className="h-4 w-4 mr-1" />
+                Demo
+              </Link>
+            </Button>
           )}
           <Button
             variant="outline"
