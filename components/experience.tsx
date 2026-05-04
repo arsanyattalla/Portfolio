@@ -2,10 +2,27 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const experienceData = [
+    {
+    company: "1st United Credit Union",
+    role: "Network Administrator",
+    period: "April 2026 - Present",
+    logo: "/1st.jpg",
+    logoScale: 1,
+    points: [
+     "Engineered and supported LAN/WAN infrastructure, including VLANs, segmentation, and routing protocols (BGP, OSPF).",
+"Delivered Tier 2/3 network troubleshooting using packet captures (Wireshark), NetFlow analysis, and log correlation.",
+"Administered Windows Server, Active Directory, DNS, DHCP, and GPO; automated operations with PowerShell.",
+"Configured and maintained Cisco, Palo Alto (PAN-OS), Ubiquiti, and Ruckus devices, including firewalls, NAT, ACLs, and VPNs (IPsec/SSL).",
+"Monitored network performance using SolarWinds, PRTG, and SNMP, resolving latency, outages, and packet loss.",
+"Implemented secure remote access solutions (GlobalProtect VPN) and enforced network security best practices.",
+"Maintained network documentation, diagrams, and ITSM workflows."
+    ],
+  },
+  
   {
     company: "Draeger's Supermarkets",
     role: "Systems Engineer",
-    period: "Oct 2025 – Present",
+    period: "Oct 2025 – April 2026",
     logo: "/DraegersCircleDLogoWhite.png",
     logoScale: 1,
     points: [

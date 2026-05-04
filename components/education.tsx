@@ -18,10 +18,8 @@ import Image from "next/image";
 
 export default function Education() {
   return (
-    <div
-      id="education"
-      
-    >
+          <div className="mx-auto max-w-5xl px-4 text-left">
+
 <div className="flex items-center gap-0">
   <Image
     src="/SFSU-San-Francisco-State-University-Symbol.png"
@@ -35,7 +33,7 @@ export default function Education() {
       San Francisco State University
     </p>
      <p className="text-lg md:text-xl text-muted-foreground italic">
-      B.S Computer Science
+      B. S. Computer Science
     </p>
   </div>
 </div>

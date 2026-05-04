@@ -219,7 +219,7 @@ export default function Portfolio() {
                   />
                 </motion.h2>
 
-                <ul class="list-disc list-outside ml-6 space-y-2">
+                <ul className="list-disc list-outside ml-6 space-y-2">
                   <li>
                     Experience designing and supporting enterprise networks
                     including Layer 2/3 switching, routing, and next-gen
