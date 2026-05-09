@@ -15,8 +15,8 @@ import Image from "next/image";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 relative">
-      <div className="container mx-auto px-1 relative z-10">
+    <section id="projects" >
+      <div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,6 +94,7 @@ export default function ProjectsSection() {
           </Button>
         </div>
       </div>
+      
     </section>
   );
 }

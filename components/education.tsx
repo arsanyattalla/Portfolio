@@ -18,9 +18,9 @@ import Image from "next/image";
 
 export default function Education() {
   return (
-          <div className="mx-auto max-w-5xl px-4 text-left">
+<div >
 
-<div className="flex items-center gap-0">
+<div className="flex items-center">
   <Image
     src="/SFSU-San-Francisco-State-University-Symbol.png"
     alt="San Francisco State University"
