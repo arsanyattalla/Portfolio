@@ -153,7 +153,7 @@ export default function Portfolio() {
                         </div>
                       </Link>
 
-                      <Link href="https://www.linkedin.com" target="_blank">
+                      <Link href="https://www.linkedin.com/in/arsany-attalla-1330531b1/" target="_blank">
                         <div className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition">
                           <Linkedin />
                         </div>
@@ -190,7 +190,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* CONTENT */}
-                    <div className="w-full max-w-6xl flex-1 overflow-y-auto pb-6">
+                    <div className="h-full w-full max-w-6xl flex-1 overflow-y-auto pb-6">
                       <div className="grid md:grid-cols-2 gap-6">
                         {[
                           "Experience designing and supporting enterprise networks including Layer 2/3 switching, routing, and next-gen firewalls across multi-site environments.",
